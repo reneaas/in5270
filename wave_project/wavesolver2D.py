@@ -43,7 +43,7 @@ class wavesolver2D:
     def plot_solution(self, analytical):
         if analytical == None:
             #X, Y = np.meshgrid(self.x, self.y)
-            plt.contourf(self.X,self.Y,self.u[1:-1, 1:-1])
+            plt.contourf(self.X, self.Y, self.u[1:-1, 1:-1], cmap="inferno")
             plt.colorbar()
             plt.xlabel("x")
             plt.ylabel("y")
@@ -52,7 +52,7 @@ class wavesolver2D:
             plt.show()
         else:
             #X, Y = np.meshgrid(self.x, self.y)
-            plt.contourf(self.X,self.Y,self.u[1:-1, 1:-1])
+            plt.contourf(self.X,self.Y,self.u[1:-1, 1:-1], cmap="inferno")
             plt.colorbar()
             plt.xlabel("x")
             plt.ylabel("y")
@@ -60,7 +60,7 @@ class wavesolver2D:
             #plt.legend()
             plt.figure()
 
-            plt.contourf(self.X,self.Y,analytical(self.X,self.Y, self.t))
+            plt.contourf(self.X,self.Y,analytical(self.X,self.Y, self.t), cmap="inferno")
             plt.colorbar()
             plt.xlabel("x")
             plt.ylabel("y")

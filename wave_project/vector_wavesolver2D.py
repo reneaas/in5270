@@ -40,7 +40,6 @@ class vector_wavesolver2D(wavesolver2D):
             for j in range(1, self.Ny+1):
                 self.q[i,j] = self.q_func(self.x[i-1], self.y[j-1])
         self.c = np.sqrt(np.max(self.q))
-        print(self.c)
         self.dt = self.beta*1./np.sqrt( (1/self.dx**2) + (1/self.dy**2) )*(1./self.c)
         #define ghost points
         self.q[0, 1:self.Ny+1] = 2*self.q[1, 1:self.Ny+1] - self.q[2, 1:self.Ny+1]
